@@ -20,13 +20,3 @@ init = tf.global_variables_initializer()
 n_epochs = 100
 batch_size = 50
 
-with tf.Session() as sess:
-    init.run()
-    for epoch in range(n_epochs):
-        for iteration in range(len(training_data) // batch_size):
-            X_batch, y_batch = next_batch(batch_size, training_data)
-            sess.run(training_op, feed_dict={X: X_batch, y: y_batch})
-        mse = loss.eval(feed_dict={X: X_train, y: y_train})
-        print(epoch, "MSE:", mse)
-
-y_pred = outputs.eval(feed_dict={X: X_test})

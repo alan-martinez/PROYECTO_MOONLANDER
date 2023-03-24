@@ -147,6 +147,8 @@ Lander = function() {
 		setThrustVolume(Math.min(1,thrustBuild)); 
 		
 		this.thrustLevel = thrustBuild;
+
+		// guardar_datos(this.bottom, this.top, this.fuel);
 		
 	};
 	
